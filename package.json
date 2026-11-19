@@ -1,0 +1,68 @@
+{
+  "name": "dsh-share-pack",
+  "version": "0.2.0",
+  "description": "把一台 DSH 的对话变成一行短链接，另一台 DSH 读回即可接着干活（跨设备会话交接 / handoff a DSH conversation to another device）",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./core": "./lib/core.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "install.mjs",
+    "dsh-plugin.json",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek",
+    "deepseek-harness",
+    "cordis",
+    "cordis-plugin",
+    "plugin",
+    "session",
+    "handoff",
+    "share",
+    "cross-device",
+    "clipboard",
+    "brotli"
+  ],
+  "engines": {
+    "node": ">=22.15"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "bin": {
+    "dsh-share-pack": "./bin/dsh-share.mjs",
+    "dsh-share-pack-install": "./install.mjs"
+  },
+  "scripts": {
+    "test": "node test/smoke.test.mjs"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gitub-ian/dsh-share-pack.git"
+  },
+  "homepage": "https://github.com/Gitub-ian/dsh-share-pack#readme",
+  "bugs": {
+    "url": "https://github.com/Gitub-ian/dsh-share-pack/issues"
+  }
+}
